@@ -137,10 +137,6 @@ const Estacionamiento = () => {
                             Espacios chicos ocupados: {chico} de 10
                         <br />
                         Motocicletas: {estacionados.filter(ve => ve.tipo === 'Motocicleta' && ve.lugar === 0).length}
-                            <br />
-                        Sedans: {estacionados.filter(ve => ve.tipo === 'Sedan' && ve.lugar === 0).length}
-                            <br />
-                        Camionetas: {estacionados.filter(ve => ve.tipo === 'Camioneta' && ve.lugar === 0).length}
                         </Segment>
                     </div>
                     <div className="col-md-4">
@@ -150,8 +146,6 @@ const Estacionamiento = () => {
                         Motocicletas: {estacionados.filter(ve => ve.tipo === 'Motocicleta' && ve.lugar === 1).length}
                             <br />
                         Sedans: {estacionados.filter(ve => ve.tipo === 'Sedan' && ve.lugar === 1).length}
-                            <br />
-                        Camionetas: {estacionados.filter(ve => ve.tipo === 'Camioneta' && ve.lugar === 1).length}
                         </Segment>
                     </div>
                     <div className="col-md-4">
