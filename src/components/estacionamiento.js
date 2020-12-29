@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Segment, Label, Modal } from 'semantic-ui-react';
+import { Button, Segment, Message, Modal } from 'semantic-ui-react';
 
 const Estacionamiento = () => {
 
@@ -17,18 +17,18 @@ const Estacionamiento = () => {
     const asignarVehiculo = () => {
         let asignado = enEspera[0];
         let seMueve = false;
-        console.log(asignado);
+        // console.log(asignado);
 
         if (asignado && asignado === 'Motocicleta') {
-            if (chico < 3) {
+            if (chico < 10) {
                 setChico(chico + 1)
                 setEstacionados(estacionados.concat({ tipo: asignado, lugar: 0 }));
                 seMueve = true;
-            } else if (mediano < 3) {
+            } else if (mediano < 10) {
                 setMediano(mediano + 1)
                 setEstacionados(estacionados.concat({ tipo: asignado, lugar: 1 }));
                 seMueve = true;
-            } else if (grande < 3) {
+            } else if (grande < 10) {
                 setGrande(grande + 1)
                 setEstacionados(estacionados.concat({ tipo: asignado, lugar: 2 }));
                 seMueve = true;
@@ -36,11 +36,11 @@ const Estacionamiento = () => {
         }
 
         if (asignado && asignado === 'Sedan') {
-            if (mediano < 3) {
+            if (mediano < 10) {
                 setMediano(mediano + 1)
                 setEstacionados(estacionados.concat({ tipo: asignado, lugar: 1 }));
                 seMueve = true;
-            } else if (grande < 3) {
+            } else if (grande < 10) {
                 setGrande(grande + 1)
                 setEstacionados(estacionados.concat({ tipo: asignado, lugar: 2 }));
                 seMueve = true;
@@ -48,7 +48,7 @@ const Estacionamiento = () => {
         }
 
         if (asignado && asignado === 'Camioneta') {
-            if (grande < 3) {
+            if (grande < 10) {
                 setGrande(grande + 1)
                 setEstacionados(estacionados.concat({ tipo: asignado, lugar: 2 }));
                 seMueve = true;
@@ -65,7 +65,7 @@ const Estacionamiento = () => {
             setMostrarModal(true)
             setVehiculoEnEspera(asignado)
         }
-        console.log(estacionados)
+        // console.log(estacionados)
     }
 
 
@@ -99,7 +99,6 @@ const Estacionamiento = () => {
         if (grande > 0) {
             lista.push(2)
         }
-        console.log(lista)
 
         if (lista.length > 0) {
             while (!lista.includes(random)) {
@@ -124,7 +123,7 @@ const Estacionamiento = () => {
             setAsignacionDisponible(true)
         }
 
-        console.log(estacionados);
+        // console.log(estacionados);
     }
     return (
         <>
@@ -209,7 +208,7 @@ const Estacionamiento = () => {
                 <br/><br/>
                 <Modal.Content>
                     <Segment raised>
-                        <h3>Por favor espera a que se libere un espacio.</h3>
+                        <Message positive>Por favor espera a que se libere un espacio.</Message>
                         <h4>Tipo de vehículo en espera: {vehiculoEnEspera}</h4>
                     </Segment>
                     <Button floated="right" color="green" onClick={() => setMostrarModal(false)}>Aceptar</Button>
