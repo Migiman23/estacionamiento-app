@@ -83,7 +83,7 @@ const Estacionamiento = () => {
         }
 
         setEnEspera(nuevaCola);
-        console.log(nuevaCola);
+        // console.log(nuevaCola);
     }
 
     const liberarEspacio = () => {
